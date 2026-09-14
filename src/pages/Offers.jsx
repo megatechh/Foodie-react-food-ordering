@@ -1,0 +1,6 @@
+import { Link } from "react-router-dom";
+import { ArrowRight, Copy, Tag } from "lucide-react";
+export default function Offers(){
+ const offers=[["FIRSTBITE","50% OFF","Your first order","Get 50% off up to ₹150 on orders above ₹399."],["FOODIE100","₹100 OFF","Big cravings, bigger savings","Save ₹100 on orders above ₹699."],["FREEDEL","FREE DELIVERY","Weekend treat","No delivery fee on orders above ₹499."]];
+ return <main className="page"><div className="container"><div className="page-heading"><span className="eyebrow">DEALS & DISCOUNTS</span><h1>Good food, <em>better prices.</em></h1><p>Grab a code, place an order and let the good times begin.</p></div><div className="offers-grid">{offers.map(o=><div className="offer-card" key={o[0]}><div className="offer-icon"><Tag/></div><span className="offer-value">{o[1]}</span><h2>{o[2]}</h2><p>{o[3]}</p><div className="code"><b>{o[0]}</b><button onClick={()=>navigator.clipboard?.writeText(o[0])}><Copy size={15}/> Copy</button></div><Link to="/menu" className="text-link">Order now <ArrowRight/></Link></div>)}</div></div></main>
+}

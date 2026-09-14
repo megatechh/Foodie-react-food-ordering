@@ -1,0 +1,2 @@
+import { Link } from "react-router-dom";
+export default function NotFound(){return <main className="page"><div className="empty-state"><span>🍕</span><h1>404</h1><h2>Oops, this plate is empty.</h2><p>The page you're looking for doesn't exist.</p><Link to="/" className="primary-btn">Back home</Link></div></main>}
